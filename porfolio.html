@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 226);
+            font-size: 1.01rem;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 70px 0;
+            align-items: center;
+        }
+
+        .firstSection>div {
+            width: 40%;
+        }
+
+        .leftSection {
+            font-size: 2.8rem;
+            margin: 70px 0;
+        }
+
+        .rightSection img {
+            width: 80%;
+        }
+
+        .purple {
+            color: rgb(170, 107, 228);
+        }
+
+        #element {
+            color: rgb(170, 107, 228);
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin-left: 5%;
+            height: 80vh;
+        }
+
+        main hr {
+            border: 0;
+            background-color: #9c97f1;
+            height: 1.2px;
+            margin: 60px 84px;
+        }
+
+        .secondSection h1 {
+            font-size: 1.9rem;
+        }
+
+        .Text-gray {
+            color: gray;
+        }
+
+        .secondSection .box {
+            background: white;
+            width: 80vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+
+        .secondSection .vertical {
+            height: 93px;
+            width: 1px;
+            background: white;
+            margin: 0 105px;
+        }
+
+        .image-top {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            top: -55px;
+            left: -18px;
+        }
+
+        .vertical .vertical-tittle {
+            position: relative;
+            top: 45px;
+            left: -20px;
+            width: 150px;
+        }
+
+        .vertical .vertical-desc {
+            position: relative;
+            top: 60px;
+            left: -20px;
+            color: gray;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: #0e0e01;
+            color: white;
+            padding: 40px 80px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-first {
+            max-width: 200px;
+        }
+
+        .footer-first p {
+            font-size: 14px;
+            color: gray;
+            margin-top: 10px;
+        }
+
+        .footer-links,
+        .footer-contact,
+        .footer-socials {
+            flex: 1;
+        }
+
+        .footer-links ul,
+        .footer-socials ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li,
+        .footer-socials li {
+            margin: 5px 0;
+        }
+
+        .footer-links a,
+        .footer-socials a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover,
+        .footer-socials a:hover {
+            color: rgb(153, 153, 226);
+        }
+
+        .footer-contact h4,
+        .footer-socials h4 {
+            margin-bottom: 10px;
+        }
+
+        .footer-contact p {
+            margin: 5px 0;
+            color: gray;
+            font-size: 14px;
+        }
+
+        .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 15px 0;
+            font-size: 14px;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+        }
+
+        .leftSection .btn {
+            padding: 12px;
+            background-color: #1e2167;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .leftSection .buttons {
+            padding: 50px 0;
+        }
+
+        .services {
+            max-width: 80vw;
+            margin: 50px auto;
+            text-align: center;
+            color: white;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: rgb(170, 107, 228);
+        }
+
+        .service-item {
+            background-color: rgb(18, 18, 62);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: rgb(153, 153, 226);
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: gray;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: rgb(170, 107, 228);
+        }
+
+        .service-item:hover h3 {
+            color: rgb(153, 153, 226);
+        }
+
+        .service-item:hover p {
+            color: white;
+        }
+
+        .projectsSection {
+            padding: 60px 80px;
+        }
+
+        .projectsSection span {
+            color: gray;
+            font-size: 14px;
+        }
+
+        .projectsSection h1 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project-card {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 370px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-front {
+            background: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            border: 5px solid rgb(170, 107, 228);
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-front h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-front p {
+            font-size: 14px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+
+        .btn-project {
+            background-color: rgb(170, 107, 228);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-project:hover {
+            background-color: rgb(140, 85, 182);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left" id="left">Yahya's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#io">About</a></li>
+                    <li><a href="#op">Services</a></li>
+                    <li><a href="#in">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection" id="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Yahya</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn">Download Resume</button>
+                    <button class="btn">Visit Github</button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="./img/PngItem_1127587.png" alt="">
+            </div>
+        </section>
+        <hr id="io">
+        <section class="secondSection" id="secondSection">
+            <span class="Text-gray">What I have done so far</span>
+            <h1>Work Experience</h1>
+            <br>
+            <br>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="./img/pngegg.png">
+                    <div class="vertical-tittle">
+                        HTML Developer (2022-2024)
+                    </div>
+                    <div class="vertical-desc">
+                        "An HTML developer who builds easy-to-use and mobile-friendly web pages, focusing on clean code,
+                        fast loading times, and good design."
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="./img/o.png">
+                    <div class="vertical-tittle">
+                        CSS Developer (2022-2024)
+                    </div>
+                    <div class="vertical-desc">
+                        "CSS developer who crafts neat layouts, appealing colors, and responsive designs for
+                        user-friendly web experiences on all devices."
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="./img/io.png">
+                    <div class="vertical-tittle">
+                        JS Developer (2023-2024)
+                    </div>
+                    <div class="vertical-desc">
+
+                        "JavaScript developer specializing in dynamic web features and seamless user experiences with
+                        clean, efficient code."
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="./img/ioo.png">
+                    <div class="vertical-tittle">
+                        React Developer (2023-2024)
+                    </div>
+                    <div class="vertical-desc">
+
+                        "React developer expert in creating fast, interactive UIs with component-based architecture for
+                        smooth, engaging user experiences."
+                    </div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="./img/po.png">
+                    <div class="vertical-tittle">
+                        Node JS Developer (2023-2024)
+                    </div>
+                    <div class="vertical-desc">
+                        "Node.js developer specializing in building scalable server-side applications with efficient,
+                        asynchronous JavaScript code."
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <hr id="op">
+        <section class="thirdSection">
+            <section class="services" id="services">
+                <h2 style="color: white;">Services</h2>
+                <br>
+                <div class="service-item">
+                    <h3>Web Development</h3>
+                    <p>Building responsive and dynamic websites using the latest technologies.</p>
+                </div>
+                <div class="service-item">
+                    <h3>UI/UX Design</h3>
+                    <p>Designing user-friendly interfaces that enhance the user experience.</p>
+                </div>
+                <div class="service-item">
+                    <h3>JavaScript Development</h3>
+                    <p>Creating interactive web applications with modern JavaScript frameworks.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Responsive web Design</h3>
+                    <p>Designing websites that seamlessly adjust and look great on all devices and screen sizes.</p>
+                </div>
+                <div class="service-item">
+                    <h3>E-commerce Development</h3>
+                    <p>Creating and maintaining online stores and shopping platforms.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Database Management</h3>
+                    <p>Designing, developing, and maintaining databases to support applications.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Custom Software Development</h3>
+                    <p>Building bespoke software solutions tailored to specific business needs.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Mobile App Development</h3>
+                    <p> Creating applications for mobile devices, either native or cross-platform.</p>
+                </div>
+            </section>
+        </section>
+        <hr style="margin-bottom: 0px;" id="in">
+        <section class="fourthSection">
+            <section class="projectsSection" id="projectsSection">
+                <span class="Text-gray">Check out my work</span>
+                <h1>Projects</h1>
+                <div class="projects">
+                    <div class="project-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="./img/3d-website-developer-working-on-laptop-illustration-png.webp"
+                                    alt="Project 1">
+                                <div class="project-info">
+                                    <h3>Login and Sign Up</h3>
+                                    <p>A login/signup page lets users access their todo list by verifying credentials or creating an account.
+                                    </p>
+                                    <a href="./javascript projects/io.html" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="./img/download (6).jfif" alt="Project 2">
+                                <div class="project-info">
+                                    <h3>Lift Page</h3>
+                                    <p>A lift page provides a simple interface for users to log in or sign up, granting access to the app.
+                                    </p>
+                                    <a href="./javascript projects/index1.html" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="./img/download (9).jfif" alt="Project 3">
+                                <div class="project-info">
+                                    <h3>Todo List</h3>
+                                    <p>A todo list page lets users log in or sign up to manage, track, and complete their tasks efficiently.
+                                    </p>
+                                    <a href="./javascript projects/index2.html" class="btn-project">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </section>
+        </section>
+    </main>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Yahya's Developer Portfolio</h3>
+                <p>Your go-to source for innovative web solutions and dynamic designs. Let's build something great
+                    together!</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#io">About</a></li>
+                    <li><a href="#op">Services</a></li>
+                    <li><a href="#in">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Me</h4>
+                <p>Email: sarshadahmed259@gmail.com</p>
+                <p>Phone: +92 312-0296859</p>
+            </div>
+            <div class="footer-socials">
+                <h4>Follow Me</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; Yahyasportfolio.com | All rights reserved
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Gsap Animator', 'Web Designer'],
+            typeSpeed: 50,
+        })
+    </script>
+</body>
+
+</html>

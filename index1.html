@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Lift Simulation</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+}
+
+.lift-container {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #555; 
+    background-color: #333; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.floor {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-bottom: 1px solid #555;
+    background-color: #444;
+    font-size: 1.2em;
+    color: #f8f8f8;
+    z-index: 2;
+}
+
+.lift {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.5s ease-in-out;
+    bottom: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.lift-door {
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-door {
+    left: 0;
+    transform-origin: left;
+}
+
+.right-door {
+    right: 0;
+    transform-origin: right;
+}
+
+.lift.open .left-door {
+    transform: translateX(-100%);
+}
+
+.lift.open .right-door {
+    transform: translateX(100%);
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.btn {
+    padding: 12px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background: #1a2a6c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #b21f1f;
+    transform: scale(1.05);
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    border: 2px solid red;
+}
+
+    </style>
+</head>
+<body>
+    <div class="lift-container">
+        <div class="floor" id="floor3">Floor 3</div>
+        <div class="floor" id="floor2">Floor 2</div>
+        <div class="floor" id="floor1">Floor 1</div>
+        <div class="floor" id="floor0">Ground</div>
+        <div class="floor" id="floor-1">Basement</div>
+        <div class="lift" id="lift">
+            <div class="lift-door left-door"></div>
+            <div class="lift-door right-door"></div>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="0" class="btn" data-floor="-1">Basement</button>
+        <button id="1" class="btn" data-floor="0">Ground</button>
+        <button id="2" class="btn" data-floor="1">Floor 1</button>
+        <button id="3" class="btn" data-floor="2">Floor 2</button>
+        <button id="4" class="btn" data-floor="3">Floor 3</button>
+    </div>
+    <script src="lift.js"></script>
+</body>
+</html>
