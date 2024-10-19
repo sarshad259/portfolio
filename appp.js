@@ -1,9 +1,9 @@
 const cars = [
-    { src: "./img/car1.avif", heading: "LAMBORGHINI" },
-    { src: "./img/car2.jpg", heading: "FERARRI" },
-    { src: "./img/car3.jpg", heading: "PORSCHE" },
-    { src: "./img/car4.jpg", heading: "KOINEGSEGG" },
-    { src: "./img/car5.jpg", heading: "BUGATTI" }
+    { src: "./car1.avif", heading: "LAMBORGHINI" },
+    { src: "./car2.jpg", heading: "FERARRI" },
+    { src: "./car3.jpg", heading: "PORSCHE" },
+    { src: "./car4.jpg", heading: "KOINEGSEGG" },
+    { src: "./car5.jpg", heading: "BUGATTI" }
   ];
   
   const loader = document.querySelector("#loader");
