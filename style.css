@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "Ethnocentric RG";
+    src: 
+      local("Ethnocentric RG"),
+      url("ethnocentric-rg-it.otf") format("opentype");
+  }
+  
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  
+  #carousel {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #eee;
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  #mainimg,
+  #nextimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    color: aqua;
+  }
+  
+  #nextimg {
+    opacity: 0;
+  }
+  
+  #arrow-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  
+  }
+  
+  .carousel-arrow {
+    transition: .5s;
+    width: 3vw;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+    height: 8vh;
+    padding: 15px;
+    margin: 5px;
+  
+  }
+  
+  .carousel-arrow:hover {
+    transition: .5s;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.272);
+    border-radius: 10px;
+  
+  }
+  
+  #heading {
+    font-family: "Ethnocentric RG",sans-serif;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -50%);
+    color: white;
+    font-size: 5vw;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  p{
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  #blackdiv{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 0;
+  }
+  
+  @media (max-width:670px) {
+    #heading {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 7vw;
+    }
+  }
