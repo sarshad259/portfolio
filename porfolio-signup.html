@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+	<title>Sign up</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+		
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: rgb(0, 0, 33);
+			color: white;
+			font-family: 'Poppins', sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			margin: 0;
+		}
+
+		.container {
+			border: rgb(170, 107, 228) 5px solid;
+			background-color: rgb(14, 14, 66);
+			border-radius: 8px;
+			height: 570px;
+			border-radius: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			overflow: hidden;
+			width: 400px;
+			max-width: 100%;
+
+		}
+
+		.header {
+			border-bottom: 2px solid #f0f0f0;
+			padding: 20px 40px;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		.header h2 {
+			margin: 0;
+		}
+
+		.form {
+			padding: 30px 40px;
+		}
+
+		.form-control {
+			margin-bottom: 10px;
+			padding-bottom: 20px;
+			position: relative;
+		}
+
+		.form-control label {
+			display: inline-block;
+			margin-bottom: 5px;
+		}
+
+		.form-control input {
+			border: 2px solid #f0f0f0;
+			border-radius: 5px;
+			display: block;
+			font-family: inherit;
+			font-size: 16px;
+			padding: 10px;
+			width: 100%;
+		}
+
+		.form-control input:focus {
+			outline: 0;
+			border-color: #777;
+		}
+
+		.form-control.success input {
+			border-color: #2ecc71;
+		}
+
+		.form-control.error input {
+			border-color: #e74c3c;
+		}
+
+		.form-control i {
+			visibility: hidden;
+			position: absolute;
+			top: 15px;
+			right: 10px;
+		}
+
+		.form-control.success i.fa-circle-check {
+			color: #2ecc71;
+			visibility: visible;
+		}
+
+		.form-control.error i.fa-circle-exclamation {
+			color: #e74c3c;
+			visibility: visible;
+		}
+
+		.form-control small {
+			color: #e74c3c;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			visibility: hidden;
+		}
+
+		.form-control.error small {
+			visibility: visible;
+		}
+
+		.form button {
+			background-color: #8e44ad;
+			border: 2px solid #8e44ad;
+			border-radius: 7px;
+			color: #fff;
+			display: block;
+			font-family: inherit;
+			font-size: 18px;
+			padding: 14px;
+			margin-top: 20px;
+			width: 100%;
+			font-weight: bold;
+		}
+
+
+
+
+
+
+
+
+
+		/* SOCIAL PANEL CSS */
+		.social-panel-container {
+			position: fixed;
+			right: 0;
+			bottom: 80px;
+			transform: translateX(100%);
+			transition: transform 0.4s ease-in-out;
+		}
+
+		.social-panel-container.visible {
+			transform: translateX(-10px);
+		}
+
+		.social-panel {
+			background-color: #fff;
+			border-radius: 16px;
+			box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
+			border: 5px solid #001F61;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-family: 'Muli';
+			position: relative;
+			height: 169px;
+			width: 370px;
+			max-width: calc(100% - 10px);
+		}
+
+		.social-panel button.close-btn {
+			border: 0;
+			color: #97A5CE;
+			cursor: pointer;
+			font-size: 20px;
+			position: absolute;
+			top: 5px;
+			right: 5px;
+		}
+
+		.social-panel button.close-btn:focus {
+			outline: none;
+		}
+
+		.social-panel p {
+			background-color: #001F61;
+			border-radius: 0 0 10px 10px;
+			color: #fff;
+			font-size: 14px;
+			line-height: 18px;
+			padding: 2px 17px 6px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin: 0;
+			transform: translateX(-50%);
+			text-align: center;
+			width: 235px;
+		}
+
+		.social-panel p i {
+			bottom: 20px;
+		}
+
+		.social-panel p a {
+			color: #FF7500;
+			text-decoration: none;
+		}
+
+		.social-panel h4 {
+			margin: 20px 0;
+			color: #97A5CE;
+			font-family: 'Muli';
+			font-size: 14px;
+			line-height: 18px;
+			text-transform: uppercase;
+		}
+
+		.social-panel ul {
+			display: flex;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.social-panel ul li {
+			margin: 0 10px;
+		}
+
+		.social-panel ul li a {
+			border: 1px solid #DCE1F2;
+			border-radius: 50%;
+			color: #001F61;
+			font-size: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 50px;
+			width: 50px;
+			text-decoration: none;
+		}
+
+		.social-panel ul li a:hover {
+			border-color: #FF6A00;
+			box-shadow: 0 9px 12px -9px #FF6A00;
+		}
+
+		.floating-btn {
+			border-radius: 26.5px;
+			background-color: #001F61;
+			border: 1px solid #001F61;
+			box-shadow: 0 16px 22px -17px #03153B;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			line-height: 20px;
+			padding: 12px 20px;
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			z-index: 999;
+		}
+
+		.floating-btn:hover {
+			background-color: #ffffff;
+			color: #001F61;
+		}
+
+		.floating-btn:focus {
+			outline: none;
+		}
+
+		.floating-text {
+			background-color: #001F61;
+			border-radius: 10px 10px 0 0;
+			color: #fff;
+			font-family: 'Muli';
+			padding: 7px 15px;
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			z-index: 998;
+		}
+
+		.floating-text a {
+			color: #FF7500;
+			text-decoration: none;
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.social-panel-container.visible {
+				transform: translateX(0px);
+			}
+
+			.floating-btn {
+				right: 10px;
+			}
+		}
+
+		a {
+			color: white;
+			text-align: center;
+		}
+
+		a:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<h2>Sign Up</h2>
+		</div>
+		<form id="form" class="form">
+			<div class="form-control">
+				<input type="text" placeholder="Username" id="username" />
+				<i class="fa-solid fa-circle-check"></i>
+				<i class="fa-solid fa-circle-exclamation"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="email" placeholder="Email" id="email" />
+				<i class="fa-solid fa-circle-check"></i>
+				<i class="fa-solid fa-circle-exclamation"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="password" placeholder="Password" id="password" />
+				<i class="fa-solid fa-circle-check"></i>
+				<i class="fa-solid fa-circle-exclamation"></i>
+				<small>Error message</small>
+			</div>
+			<div class="form-control">
+				<input type="password" placeholder="check Password" id="password2" />
+				<i class="fa-solid fa-circle-check"></i>
+				<i class="fa-solid fa-circle-exclamation"></i>
+				<small>Error message</small>
+			</div>
+			<button>Sign Up</button>
+			<br>
+			<a style="margin-left: 30%;" href="porfolio-login.html">Have an Account</a>
+		</form>
+	</div>
+
+	<script src="script21.js"></script>
+</body>
+
+</html>
