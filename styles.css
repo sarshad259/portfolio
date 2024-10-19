@@ -1,0 +1,102 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2b1055, #7597de);
+    color: white;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.2s ease;
+  }
+  
+  .cell.x::before {
+    content: 'X';
+    color: #ff5f6d;
+    font-size: 3rem;
+  }
+  
+  .cell.circle::before {
+    content: 'O';
+    color: #ffc371;
+    font-size: 3rem;
+  }
+  
+  .cell:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Styling for the X and O turn hover */
+  .board.x .cell:hover {
+    background: rgba(255, 95, 109, 0.5);
+  }
+  
+  .board.circle .cell:hover {
+    background: rgba(255, 195, 113, 0.5);
+  }
+  
+  .winning-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  .winning-message.show {
+    display: block;
+  }
+  
+  #restartButton {
+    background-color: #ff5f6d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #restartButton:hover {
+    background-color: #ffc371;
+  }
+  
+  [data-winning-message-text] {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
